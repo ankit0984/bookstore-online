@@ -1,60 +1,76 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react';
+import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs';
+import { RxDotFilled } from 'react-icons/rx';
 
-export default function Cards() {
+function App() {
+  const slides = [
+    {
+      url: 'https://miro.medium.com/v2/resize:fit:1400/1*uZLw0bk6y8OBoBMoRh_l6Q.jpeg',
+    },
+    {
+      url: 'https://www.bpmcdn.com/f/files/agassiz/import/2018-03/10851854_web1_180302-BPD-M-Textbook.jpg',
+    },
+    {
+      url: 'https://www.frontlist.in/storage/uploads/2021/01/Red-Team-Development-and-Operations.jpg',
+    },
+
+  ];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const prevSlide = () => {
+    const isFirstSlide = currentIndex === 0;
+    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const nextSlide = () => {
+    const isLastSlide = currentIndex === slides.length - 1;
+    const newIndex = isLastSlide ? 0 : currentIndex + 1;
+    setCurrentIndex(newIndex);
+  };
+
+  const goToSlide = (slideIndex) => {
+    setCurrentIndex(slideIndex);
+  };
+
   return (
-    <div>
-      
-<div id="default-carousel" className="relative w-full" data-carousel="slide">
-    {/* <!-- Carousel wrapper --> */}
-    <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-         {/* <!-- Item 1 --> */}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/Images/book0.png" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-        </div>
-        {/* <!-- Item 2 --> */}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-2.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-        </div>
-        {/* <!-- Item 3 --> */}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-3.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-        </div>
-        {/* <!-- Item 4 --> */}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-4.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-        </div>
-        {/* <!-- Item 5 --> */}
-        <div className="hidden duration-700 ease-in-out" data-carousel-item>
-            <img src="/docs/images/carousel/carousel-5.svg" className="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="..." />
-        </div>
+    <>
+    <div className='Text-6xl font-bold text-center mt-6'>
+    
+    <h1>Resources</h1>
     </div>
-    {/* <!-- Slider indicators --> */}
-    <div className="absolute z-30 flex space-x-3 -translate-x-1/2 bottom-5 left-1/2">
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide 1" data-carousel-slide-to="0"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 4" data-carousel-slide-to="3"></button>
-        <button type="button" className="w-3 h-3 rounded-full" aria-current="false" aria-label="Slide 5" data-carousel-slide-to="4"></button>
+    <h2 className='text-center text-xl font-bold mt-6'>
+    <p>Here are some resources that will help you to learn from our resources ...</p>
+    </h2>
+    <div className='max-w-[1320px] h-[720px] w-full m-auto py-16 px-4 relative group'>
+      <div
+        style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+        className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
+      ></div>
+      {/* Left Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+        <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      </div>
+      {/* Right Arrow */}
+      <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
+        <BsChevronCompactRight onClick={nextSlide} size={30} />
+      </div>
+      <div className='flex top-4 justify-center py-2'>
+        {slides.map((slide, slideIndex) => (
+          <div
+            key={slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+            className='text-2xl cursor-pointer'
+          >
+            <RxDotFilled />
+          </div>
+        ))}
+      </div>
     </div>
-    {/* <!-- Slider controls --> */}
-    <button type="button" className="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg className="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
-            </svg>
-            <span className="sr-only">Previous</span>
-        </span>
-    </button>
-    <button type="button" className="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
-        <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-            <svg className="w-4 h-4 text-white dark:text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
-            </svg>
-            <span className="sr-only">Next</span>
-        </span>
-    </button>
-</div>
-
-    </div>
-  )
+    </>
+  );
 }
+
+export default App;

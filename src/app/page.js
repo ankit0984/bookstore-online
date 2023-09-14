@@ -14,8 +14,8 @@ export default function page() {
       <Nav />
       <Home />
       <Cards />
-      {/* <About />
-      <Contact /> */}
+      <About />
+      {/* <Contact /> */}
       <Footer />
     </div>
   )
