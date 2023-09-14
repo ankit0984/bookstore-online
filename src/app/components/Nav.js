@@ -23,9 +23,6 @@ const Navbar = () => {
                 <button type="button"  className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
                   Get started
                 </button>
-
-              
-
               <button onClick={handleMenuToggle} className="text-white focus:outline-none">
                 <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   {isMenuOpen ? (
@@ -40,7 +37,7 @@ const Navbar = () => {
               <Link href="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Home
               </Link>
-              <Link href="/about" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="#about" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 About
               </Link>
               {/* Conditionally render the Resources button */}
@@ -65,14 +62,13 @@ const Navbar = () => {
               <Link href="/" className="text-white block px-3 py-2 rounded-md text-base font-medium">
                 Home
               </Link>
-              <Link href="/about" className="text-white block px-3 py-2 rounded-md text-base font-medium">
+              <Link href="#about" className="text-white block px-3 py-2 rounded-md text-base font-medium">
                 About
               </Link>
               {/* Conditionally render the Resources button */}
               <Link href="/contact" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Resources
               </Link>
-              
               <Link href="/contact" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Contact
               </Link>

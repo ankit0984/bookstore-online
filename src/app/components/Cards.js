@@ -37,14 +37,11 @@ function App() {
 
   return (
     <>
-    <div className='Text-6xl font-bold text-center mt-6'>
-    
+    <div className='text-center text-xl font-semi-bold mt-4'>
     <h1>Resources</h1>
+    <h1 className='mt-3'>Here are some resources that will help you to learn from our resources ...</h1>
     </div>
-    <h2 className='text-center text-xl font-bold mt-6'>
-    <p>Here are some resources that will help you to learn from our resources ...</p>
-    </h2>
-    <div className='max-w-[1320px] h-[720px] w-full m-auto py-16 px-4 relative group'>
+    <div className='max-w-[1320px] h-[650px] w-full m-auto py-10 px-4 relative group'>
       <div
         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
         className='w-full h-full rounded-2xl bg-center bg-cover duration-500'
