@@ -5,6 +5,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Cards from './components/Cards'
+import Demo from './components/Demo'
 
 
 
@@ -13,7 +14,8 @@ export default function page() {
     <div>
       <Nav />
       <Home />
-      <Cards />
+      {/* <Cards /> */}
+      <Demo />
       <About />
       {/* <Contact /> */}
       <Footer />

@@ -1,4 +1,4 @@
-// File: C:\Users\ankit\Desktop\bookstore\src\app\layout.js
+// File: C:\Users\ankit\Desktop\newproject\bookstore\src\app\layout.js
 import * as entry from '../../../src/app/layout.js'
 import type { ResolvingMetadata } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
