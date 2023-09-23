@@ -37,11 +37,11 @@ const Navbar = () => {
               <Link href="/" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Home
               </Link>
-              <Link href="#about" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="#about" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium scroll-smooth">
                 About
               </Link>
               {/* Conditionally render the Resources button */}
-              <Link href="/contact" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+              <Link href="/resources" className="text-white hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                 Resources
               </Link>
               
@@ -62,7 +62,7 @@ const Navbar = () => {
               <Link href="/" className="text-white block px-3 py-2 rounded-md text-base font-medium">
                 Home
               </Link>
-              <Link href="#about" className="text-white block px-3 py-2 rounded-md text-base font-medium">
+              <Link href="#about" className="text-white block px-3 py-2 rounded-md text-base font-medium scroll-smooth">
                 About
               </Link>
               {/* Conditionally render the Resources button */}

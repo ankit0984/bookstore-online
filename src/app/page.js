@@ -12,13 +12,13 @@ import Demo from './components/Demo'
 export default function page() {
   return (
     <div>
-      <Nav />
+      {/* <Nav /> */}
       <Home />
       {/* <Cards /> */}
       <Demo />
       <About />
       {/* <Contact /> */}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   )
 }
