@@ -15,9 +15,9 @@ export default function page() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://localhost:1337/api/book-dbs?populate=*", {
+        const res = await axios.get("", {
           headers: {
-            Authorization: "Bearer 222d26e8e0192164cfe72326e22c3874a899fc02016ed8ac0704414f32a9156261b224a8e66625385cf5107a6459a5e261adf4941efa48888819fd9f7dc540f285415ee75e20159794a8b7301870d737bb724555a5c92596214e05a295657d32bc64bdc377c6ab014d1d1256463a9747c10ce3eea20af385a2d7f384e2f10591",
+            Authorization: "Bearer ",
           }
         });
         setBooks(res.data.data);
